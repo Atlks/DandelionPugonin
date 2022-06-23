@@ -1,5 +1,6 @@
+
 <?php
-/**
+/**qq11111
  * Open Source Social Network
  *
  * @package   (openteknik.com).ossn
@@ -36,6 +37,31 @@
  }
  $flush_cache = ossn_site_url("action/admin/cache/flush", true);
 ?>
+<div id="menux">
+拉群管理
+
+<a href="pugy/tg_batMng.htm" target="ifrmx"> TG机器人管理</a>
+<a href="pugy\tg_caijiGrpUsr.htm" target="ifrmx">采集群组用户</a>
+<a href="" target="ifrmx"> </a>
+<a href="pugy/tg_icaijiGrpUsr.htm" target="ifrmx">已采集群用户 </a>
+<a href="pugy/tg_lacyonMng.htm" target="ifrmx">拉群管理 </a>
+
+
+
+采集发布管理
+TG群采集管理
+TG群发布管理
+采集内容替换
+发布内容替换
+
+群发聊天管理(待整理)
+定制内容
+添加好友
+聊天词库
+聊天关键词    
+
+</div>
+<iframe name="ifrmx" width="100%" height="500px" src="pugy/tg_batMng.htm"></iframe>
 <div class="ossn-admin-dsahboard">
 	<div class="row">
     
