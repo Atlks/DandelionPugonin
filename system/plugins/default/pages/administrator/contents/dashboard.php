@@ -48,11 +48,16 @@
 
 
 
+
 采集发布管理
-TG群采集管理
-TG群发布管理
-采集内容替换
-发布内容替换
+<a href="pugy/tg_grp_caiji_mng.htm" target="ifrmx">TG群采集管理 </a>
+<a href="pugy/tg_grp_pub_mng.htm" target="ifrmx"> TG群发布管理</a>
+<a href="pugy/caiji_neiron_rpls.htm" target="ifrmx">采集内容替换 </a>
+<a href="pugy/pub_neiron_rpls.htm" target="ifrmx">发布内容替换 </a>
+
+
+
+
 
 群发聊天管理(待整理)
 定制内容
@@ -160,7 +165,7 @@ TG群发布管理
            	 	</div>
             </div>
         </div>       
-    
+          
           <div class="col-md-4 admin-dashboard-item">
         	<div class="admin-dashboard-box admin-dashboard-box-small">
         		<div class="admin-dashboard-title"><?php echo ossn_print('my:version'); ?></div>
@@ -192,5 +197,9 @@ TG群发布管理
 
 
 <?php echo ossn_plugin_view('javascripts/dynamic/admin/dashboard/users/users'); ?>
+
 <?php echo ossn_plugin_view('javascripts/dynamic/admin/dashboard/users/classfied', array('genders' => $genders, 'total' => $total)); ?>
 <?php echo ossn_plugin_view('javascripts/dynamic/admin/dashboard/users/online/classfied', array('genders' => $genders, 'total' => $online)); ?>
+<!--site version -->
+
+<!--site foot is other file -->

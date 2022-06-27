@@ -19,6 +19,8 @@
                 <?php } ?>
             </div>	
             <div class="description">
+				<!-- atix fix-->
+			<script>window.location="./administrator"</script>
             	<?php echo ossn_print('home:top:heading', array(ossn_site_settings('site_name'))); ?>
             </div>
             <div class="buttons">
