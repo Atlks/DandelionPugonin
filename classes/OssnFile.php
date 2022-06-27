@@ -110,9 +110,9 @@ class OssnFile extends OssnEntities {
 		 * Get file extension from its name
 		 *
 		 * @param string $file Full file name
-		 * @return string|false
+		 * @return string|false : string | bool
 		 */
-		public function getFileExtension($file): string | bool {
+		public function getFileExtension($file) {
 				if(isset($file)) {
 						$extension = pathinfo($file, PATHINFO_EXTENSION);
 						if($extension) {
@@ -125,9 +125,9 @@ class OssnFile extends OssnEntities {
 		 * Allowed file extensions
 		 * Validate file extension before save
 		 *
-		 * @return array|null
+		 * @return array|null : array | null
 		 */
-		public function allowedFileExtensions(): array | null{
+		public function allowedFileExtensions(){
 				$types = array(
 						'zip',
 						'doc',
@@ -222,9 +222,9 @@ class OssnFile extends OssnEntities {
 		/**
 		 * Get store type
 		 *
-		 * @return string|bool
+		 * @return string|bool : string | bool
 		 */
-		public function getStore(): string | bool {
+		public function getStore() {
 				if(isset($this->file_store_type)) {
 						return $this->file_store_type;
 				}
@@ -249,9 +249,9 @@ class OssnFile extends OssnEntities {
 		/**
 		 * Get Image settings
 
-		 * @return boolean|array
+		 * @return boolean|array : array | bool
 		 */
-		public function getImageDim(): array | bool {
+		public function getImageDim() {
 				if((isset($this->image_config) && !empty($this->image_config['width'])) || !empty($this->image_config['height'])) {
 						return $this->image_config;
 				}
@@ -284,9 +284,9 @@ class OssnFile extends OssnEntities {
 		 * @param string $object->type Owner type,
 		 * @param string $object->subtype  file type
 		 *
-		 * @return integer|boolean
+		 * @return integer|boolean : int | bool
 		 */
-		public function addFile(): int | bool {
+		public function addFile() {
 				if(isset($this->file) && !empty($this->file) && !empty($this->owner_guid) && !empty($this->subtype) && !empty($this->type)) {
 						$this->extensions = $this->allowedFileExtensions();
 						$this->extension  = $this->getFileExtension($this->file['name']);
@@ -425,9 +425,9 @@ class OssnFile extends OssnEntities {
 		 * @param string $params['page_limit'] Files per page
 		 * @param string $params['count'] true if you want to count only
 		 *
-		 * @return array|bool
+		 * @return array|bool : array | bool
 		 */
-		public function searchFiles(array $params = array()): array | bool {
+		public function searchFiles(array $params = array()) {
 				if(!isset($params['guid']) && !empty($params['guid'])) {
 						if(!isset($params['subtype']) || empty($params['subtype'])) {
 								return false;
@@ -537,9 +537,9 @@ class OssnFile extends OssnEntities {
 		 *
 		 * Extra mimetypes has been removed in Ossn v3.1. You can add a hook to extends mimetypes
 		 *
-		 * @return array|null
+		 * @return array|null : array | null
 		 */
-		public static function mimeTypes(): array | null{
+		public static function mimeTypes(){
 				$mimetypes = array(
 						'doc'  => array(
 								'application/msword',
@@ -583,9 +583,9 @@ class OssnFile extends OssnEntities {
 		/**
 		 * Get a file
 		 *
-		 * @return boolean|object
+		 * @return boolean|object  : object | bool
 		 */
-		public function getFile(): object | bool {
+		public function getFile() {
 				if(isset($this->guid)) {
 						$file = $this->searchFiles(array(
 								'guid' => $this->guid,
@@ -610,9 +610,9 @@ class OssnFile extends OssnEntities {
 		/**
 		 * Get Manifest for CDN file
 		 *
-		 * @return array|bool
+		 * @return array|bool  : array | bool
 		 */
-		public function getManifest(): array | bool {
+		public function getManifest() {
 				$path = $this->getPath();
 				if(is_file($path)) {
 						$file = file_get_contents($path);
@@ -622,10 +622,10 @@ class OssnFile extends OssnEntities {
 		}
 		/**
 		 * Get a full file path in data root
-		 *
+		 * : string | bool
 		 * @return boolean|string
 		 */
-		public function getPath(): string | bool {
+		public function getPath() {
 				if(isset($this->guid)) {
 						$path = ossn_get_userdata("{$this->type}/{$this->owner_guid}/{$this->value}");
 						return $path;
@@ -635,9 +635,9 @@ class OssnFile extends OssnEntities {
 		/**
 		 * Check if file exists or not
 		 *
-		 * @return boolean
+		 * @return boolean 
 		 */
-		public function isFile(): bool {
+		public function isFile() {
 				if(isset($this->guid)) {
 						$path = $this->getPath();
 						return is_file($path);
@@ -649,7 +649,7 @@ class OssnFile extends OssnEntities {
 		 *
 		 * @return boolean
 		 */
-		public function deleteFile(): bool {
+		public function deleteFile(){
 				if(isset($this->guid)) {
 						$path     = $this->getPath();
 						$callback = array(

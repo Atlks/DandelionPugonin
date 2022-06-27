@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="zh">
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+    <title>我們沒找到這個頁面! : xxx</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <link rel="icon" href="http://localhost/ossn/themes/goblue/images/favicon.ico" type="image/x-icon" />
+	
+    <!-- 
+	Open Source Social Network (Ossn) https://www.opensource-socialnetwork.org/     
+	OpenTeknik LLC (https://www.openteknik.com/)
+	-->
+    
+<link rel="stylesheet" type="text/css" href="http://localhost/ossn/css/view/bootstrap.min.css" />
+<link rel="stylesheet" type="text/css" href="http://localhost/ossn/css/view/ossn.default.css" />
+<script src="http://localhost/ossn/vendors/jquery/jquery-3.6.0.min.js"></script>
+<script src="//ajax.googleapis.com/ajax/libs/jqueryui/1.12.1/jquery-ui.min.js"></script>
+<script src="http://localhost/ossn/vendors/jquery/jquery-arhandler-1.1-min.js"></script>
+<script src="http://localhost/ossn/components/OssnAutoPagination/vendors/jquery.scrolling.js"></script>
+<script src="http://localhost/ossn/js/view/ossn.language.js"></script>
+<script src="http://localhost/ossn/js/view/opensource.socialnetwork.js"></script>
+<script src="http://localhost/ossn/js/view/ossn.site.public.js"></script>
+<link rel="stylesheet" type="text/css" href="//cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css" />
+<link rel="stylesheet" type="text/css" href="https://fonts.googleapis.com/css?family=PT+Sans:400italic,700,400" />
+<script src="http://localhost/ossn/themes/goblue/vendors/bootstrap/js/bootstrap.min.js?v5.2"></script>
+<link rel="stylesheet" type="text/css" href="//cdnjs.cloudflare.com/ajax/libs/jqueryui/1.10.4/css/jquery-ui.css" /><script>
+</script>
+    <script>
+         	
+	Ossn.site_url = 'http://localhost/ossn/';
+	Ossn.Config = {"token":{"ossn_ts":1656323283,"ossn_token":"754fc0cf24ca48953c33f1c8cb25f953c0da741f048b451709c323f11c5f540d"},"cache":{"last_cache":"f4dbdf21","ossn_cache":"0"}};
+	Ossn.Init();
+    </script>
+</head>
+
+<body>
+	<div class="ossn-page-loading-annimation">
+    		<div class="ossn-page-loading-annimation-inner">
+            	<div class="ossn-loading"></div>
+            </div>
+    </div>
+
+	<div class="ossn-halt ossn-light"></div>
+	<div class="ossn-message-box"></div>
+	<div class="ossn-viewer" style="display:none"></div>
+    
+    <div class="opensource-socalnetwork">
+    	    	 <div class="ossn-page-container">
+			  <!-- ossn topbar -->
+<div class="topbar">
+	<div class="container-fluid">
+		<div class="row">
+			<div class="col col-md-2 left-side left">
+							</div>
+			<div class="col-md-7 site-name text-center ">
+				<span><a href="http://localhost/ossn/">xxx</a></span>
+			</div>
+			<div class="col-9 col-md-3 text-right right-side">
+				<div class="topbar-menu-right">
+					<ul>
+					<li class="ossn-topbar-dropdown-menu">
+						<div class="dropdown">
+												</div>
+					</li>                
+										</ul>
+				</div>
+			</div>
+		</div>
+	</div>
+</div>
+<!-- ./ ossn topbar -->
+          <div class="ossn-inner-page">    
+  	  		  <div class="container">
+       	<div class="ossn-layout-contents">
+            <div class="ossn-system-messages">
+	   <div class="row">
+	  	 <div class="col-md-11">
+       			<div class="ossn-system-messages-inner">
+    				            		</div>
+	   	</div>
+	</div>
+</div>    
+       		<div class="row">
+				 	<div class="row">
+	<div class="col-md-11 ossn-page-contents">
+ 			<div class="ossn-error-page">
+				<i class="fa fa-exclamation-triangle"></i>
+    			<div class="error-heading">404</div>
+    			<div class="error-text">這個頁面無法讀取也許它被刪除了.</div>
+			</div>   
+    </div>
+</div>             </div>    
+        </div> 
+	   <footer>
+    <div class="col-md-11">
+        <div class="footer-contents">
+            <div class="ossn-footer-menu">
+                <a class="menu-footer-a_copyrights" href="http://localhost/ossn/">&copy; 版權擁有 xxx</a><a class="menu-footer-about" href="http://localhost/ossn/site/about">關於</a><a class="menu-footer-site" href="http://localhost/ossn/site/terms">網站使用條款</a><a class="menu-footer-privacy" href="http://localhost/ossn/site/privacy">隱私政策</a><a class="menu-footer-powered" href="https://www.opensource-socialnetwork.org/">Powered by the Open Source Social Network.</a>            </div>
+                    </div>
+    </div>
+</footer>
+                               
+</div>
+          </div>    
+		</div>
+    </div>
+    <div id="theme-config" class="hidden" data-desktop-cover-height="200" data-minimum-cover-image-width="1040"></div>	
+               
+</body>
+</html>

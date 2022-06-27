@@ -231,9 +231,9 @@ class OssnPhotos extends OssnFile {
 		 *
 		 * @param array $param Option values
 		 *
-		 * @return boolean|array
+		 * @return boolean|array  : array | bool
 		 */
-		public function searchPhotos($params): array | bool {
+		public function searchPhotos($params) {
 				return $this->searchFiles($params);
 		}
 		/**
@@ -241,9 +241,9 @@ class OssnPhotos extends OssnFile {
 		 *
 		 * @param string $size album or default 
 		 * 
-		 * @return boolean
+		 * @return boolean : bool|string
 		 */
-		public function getURL($size = ''): bool|string {
+		public function getURL($size = '') {
 				if($this->subtype == 'file:ossn:aphoto' || $this->subtype == 'file:profile:photo' || $this->subtype == 'file:profile:cover') {
 						$image = str_replace('album/photos/', '', $this->value);
 						if($this->isCDN()) {
