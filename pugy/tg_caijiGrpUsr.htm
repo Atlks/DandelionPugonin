@@ -2,6 +2,11 @@
 <html>
 
 <head>
+
+    <script
+  src="https://code.jquery.com/jquery-3.6.0.js"
+  integrity="sha256-H+K7U5CnXl1h5ywQfKtSj8PCmoN9aaq30gDh27Xc0jk="
+  crossorigin="anonymous"></script>
     <!-- CSS only -->
 <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-0evHe/X+R7YkIZDRvuzKMRqM+OrBnVFBL6DOitfPri4tjfHxaWutUpFmBp4vmVor" crossorigin="anonymous" />
 
@@ -15,7 +20,7 @@
         <h1>采集群用户</h1>
         <main>
         <button>新增</button>
-        <table class="table">
+        <table class="table" id="tbx">
         
            
             
@@ -85,6 +90,30 @@
         
             </tr>
         </table>
+
+
+        <script>
+            var studentList=[
+                {"id":1,  "grp":"https://t.me/qingliao",id:1,imp:10,yicaiji:10,freq:6,cloudsvr:"1号服务器",stat:"进行中",updt:"2022-10-10 22:22:33","imp":10,"av":9}
+                ,{"id":2, "grp":"https://t.me/qingliao",id:1,imp:10,yicaiji:10}]
+              for (var i in studentList) {
+                 $("#tbx").append(
+                     "<tr><td>"+studentList[i].id+"</td>"+
+                     "<td>"+studentList[i].grp+"</td>"+
+                     "<td>"+studentList[i].imp+"</td>"+
+                     "<td>"+studentList[i].yicaiji+"</td>"+
+                     "<td>"+studentList[i].freq+"</td>"+
+                     "<td>"+studentList[i].cloudsvr+"</td>"+
+                     "<td>"+studentList[i].stat+"</td>"+
+                     "<td>"+studentList[i].updt+"</td>"+
+                     "<td></td><td></td><td></td>"+
+                     +"</tr>"
+                 )
+              }
+
+ </script>
+ 
+      
         
         </main>
     </section>

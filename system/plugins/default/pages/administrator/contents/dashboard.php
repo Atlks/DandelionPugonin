@@ -66,7 +66,7 @@
 聊天关键词    
 
 </div>
-<iframe name="ifrmx" width="100%" height="500px" src="pugy/tg_batMng.htm"></iframe>
+<iframe name="ifrmx" width="100%" height="300px" src="pugy/tg_batMng.htm"></iframe>
 <div class="ossn-admin-dsahboard">
 	<div class="row">
     
