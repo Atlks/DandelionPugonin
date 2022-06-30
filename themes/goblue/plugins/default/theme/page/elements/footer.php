@@ -4,6 +4,7 @@
             <div class="ossn-footer-menu">
                 <?php echo ossn_view_menu('footer'); ?>
             </div>
+            222
             <?php echo ossn_fetch_extend_views('ossn/page/footer/contents'); ?>
         </div>
     </div>

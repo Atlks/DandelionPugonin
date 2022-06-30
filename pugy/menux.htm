@@ -1,39 +1,90 @@
 
+
+
+
 <link href="/cssmain.css" rel="stylesheet"/>
 <link href="cssmain.css" rel="stylesheet"/>
 <link href="/ossn/cssmain.css" rel="stylesheet"/>
 <link href="/ossn/pugy/cssmain.css" rel="stylesheet"/>
 <style>
 
-#menux a {
+    #menux a {
+        display: block;
+        width: 130px;
+        margin-top: 3px;
+        background-color: whitesmoke;
+        color: black;
+        
+        
+    }
+
+    .aFnl {
+        color: wheat !important; 
+        font-weight:bolder  ; 
+        background-color:rgb(29, 132, 74)  !important; 
+        transition:all 3s;
+    }
+
+    #menux a:hover {
+        background-color: rgb(180, 140, 11) !important; 
+        transition:all 0.5s;
+        padding: 5px;
+
+    }
+    .titx{
+        background-color: rgb(150, 148, 148);
+        font-size: 18px;
+        font-weight: bolder;
+    }
+
+    .titxFnl{
+        background-color: white;
+        font-size: 14px;
+        font-weight:lighter;
+        transition:all 3s;
+    }
+
     
-}
+    </style>
+    
+<section style="display:flex">
 
-</style>
-<div id="menux">
-拉群管理::
+    <div id="menux">
+        <div class="titx"> 拉群管理::</div>
 
-<a href="pugy/tg_batMng.htm" target="ifrmx"> TG机器人管理</a>
-<a href="pugy\tg_caijiGrpUsr.htm" target="ifrmx">采集群组用户</a>
- 
-<a href="pugy/tg_icaijiGrpUsr.htm" target="ifrmx">已采集群用户 </a>
-<a href="pugy/tg_lacyonMng.htm" target="ifrmx">拉群管理 </a>
+       
+        
+        <a href="pugy/tg_batMng.htm" target="ifrmx"> TG机器人管理</a>
+        <a href="pugy\tg_caijiGrpUsr.htm" target="ifrmx">采集群组用户</a>
+         
+        <a href="pugy/tg_icaijiGrpUsr.htm" target="ifrmx">已采集群用户 </a>
+        <a href="pugy/tg_lacyonMng.htm" target="ifrmx">拉群管理 </a>
+        
+        
+        
+        
+        <div class="titx"> 采集发布管理::</div>
+        <a href="pugy/tg_grp_caiji_mng.htm" target="ifrmx">TG群采集管理 </a>
+        <a href="pugy/tg_grp_pub_mng.htm" target="ifrmx"> TG群发布管理</a>
+        <a href="pugy/caiji_neiron_rpls.htm" target="ifrmx">采集内容替换 </a>
+        <a href="pugy/pub_neiron_rpls.htm" target="ifrmx">发布内容替换 </a>
+        
+        
+        
+        
+        
+        群发聊天管理(待)
+        <script>
+            setTimeout(() => {
+                $( ".titx" ).addClass( "titxFnl cls99" );
+                $("#menux a").addClass("aFnl")
+            }, 500);
+            
+      </script>
+        
+        </div>
 
+      
+        <iframe name="ifrmx" width="100%" height="250px" src="pugy/tg_batMng.htm"></iframe>
 
-
-
-采集发布管理::
-<a href="pugy/tg_grp_caiji_mng.htm" target="ifrmx">TG群采集管理 </a>
-<a href="pugy/tg_grp_pub_mng.htm" target="ifrmx"> TG群发布管理</a>
-<a href="pugy/caiji_neiron_rpls.htm" target="ifrmx">采集内容替换 </a>
-<a href="pugy/pub_neiron_rpls.htm" target="ifrmx">发布内容替换 </a>
-
-
-
-
-
-群发聊天管理(待整理)
-  
-
-</div>
-<iframe name="ifrmx" width="100%" height="300px" src="pugy/tg_batMng.htm"></iframe>
+</section>

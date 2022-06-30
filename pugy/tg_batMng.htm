@@ -19,7 +19,21 @@
     <section>
         <h1>TG机器人管理</h1>
         <main>
-        <button class="btn btn-primary" onclick="avatar.click()">导入</button>
+            <style>
+                .btnFnl{
+                    background-color: rgb(53, 122, 232);
+                    transition:all 5s;
+                }
+            </style>
+           
+        <button class="btn btn-secondary " onclick="avatar.click()" id="impx">导入</button>
+        <script>
+              setTimeout(() => {
+                  $( "#impx" ).addClass( "btnFnl cls99" );
+              }, 500);
+              
+        </script>
+     
         <input type="file"
        id="avatar" name="avatar"
         >
