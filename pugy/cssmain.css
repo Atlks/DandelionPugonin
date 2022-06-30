@@ -1,0 +1,23 @@
+body{
+    padding: 10px;
+}
+
+h1{
+    font-size: 20px;
+}
+table{
+    margin-top: 9px;
+}
+button{
+    
+}
+
+#menux a {
+    border-radius:8px;
+    display: inline-block;
+    background-color: rgb(10, 106, 77);
+    color: white;
+    padding-left: 9px;
+    padding-right: 9px;
+    
+}
