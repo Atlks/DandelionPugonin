@@ -24,6 +24,11 @@
                     background-color: rgb(53, 122, 232);
                     transition:all 5s;
                 }
+
+                .btnFnl:hover{
+                    background-color: rgb(183, 175, 28);
+                    transition:all 1s;
+                }
             </style>
            
         <button class="btn btn-secondary " onclick="avatar.click()" id="impx">导入</button>
@@ -99,7 +104,7 @@
                             "<td>"+studentList[i].av+"</td>"+
                             "<td>"+studentList[i].time+"</td>"+
                             "<td>"+studentList[i].time+"</td>"+
-                            "<td></td><td></td> "+
+                            "<td>  <a href='javascript:alert(\"ok\")'>检查失效</a>  <a href='javascript:alert(\"ok\")'>删除</a> </td><td></td> "+
                             +"</tr>"
                         )
                      }
@@ -109,5 +114,8 @@
         </main>
     </section>
 
+    <script>
+        
+    </script>
 
 </body></html>

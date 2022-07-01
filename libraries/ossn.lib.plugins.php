@@ -72,6 +72,9 @@ function ossn_plugin_view($plugin = '', $vars = array(), $type = 'default') {
 		$plugin_type = ossn_call_hook('plugin', 'view:type', $args, $type);
 		if(isset($Ossn->plugins[$plugin_type][$plugin])) {
 				$extended_views = ossn_fetch_extend_views($plugin, $vars);
+			//	var_dump ($extended_views)
+			//    echo ($extended_views)
+			//    die()
 				return ossn_view($Ossn->plugins[$plugin_type][$plugin] . $plugin, $vars) . $extended_views;
 		}
 }

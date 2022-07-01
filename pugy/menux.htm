@@ -1,6 +1,6 @@
 
 
-
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.8.3/font/bootstrap-icons.css">
 
 <link href="/cssmain.css" rel="stylesheet"/>
 <link href="cssmain.css" rel="stylesheet"/>
@@ -12,23 +12,26 @@
         display: block;
         width: 130px;
         margin-top: 3px;
-        background-color: whitesmoke;
-        color: black;
         
+        color: black;
+        padding: 5px;
+       
         
     }
 
+ 
     .aFnl {
-        color: wheat !important; 
-        font-weight:bolder  ; 
-        background-color:rgb(29, 132, 74)  !important; 
+        
+       font-weight: lighter;
+      
         transition:all 3s;
+        padding-left: 20px !important;
     }
 
     #menux a:hover {
-        background-color: rgb(180, 140, 11) !important; 
-        transition:all 0.5s;
-        padding: 5px;
+        background-color: rgb(203, 159, 15) !important ; 
+        transition:all 0.2s;
+      
 
     }
     .titx{
@@ -50,7 +53,7 @@
 <section style="display:flex">
 
     <div id="menux">
-        <div class="titx"> 拉群管理::</div>
+        <div class="titx"> <i class="bi bi-slack"></i> 拉群管理:</div>
 
        
         
@@ -63,7 +66,7 @@
         
         
         
-        <div class="titx"> 采集发布管理::</div>
+        <div class="titx"><i class="bi bi-slack"></i> 采集发布管理::</div>
         <a href="pugy/tg_grp_caiji_mng.htm" target="ifrmx">TG群采集管理 </a>
         <a href="pugy/tg_grp_pub_mng.htm" target="ifrmx"> TG群发布管理</a>
         <a href="pugy/caiji_neiron_rpls.htm" target="ifrmx">采集内容替换 </a>
@@ -85,6 +88,6 @@
         </div>
 
       
-        <iframe name="ifrmx" width="100%" height="250px" src="pugy/tg_batMng.htm"></iframe>
+        <iframe name="ifrmx" width="100%" height="7750px" src="pugy/tg_batMng.htm"></iframe>
 
 </section>

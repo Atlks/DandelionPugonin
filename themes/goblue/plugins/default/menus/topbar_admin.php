@@ -4,7 +4,8 @@
      			 <i class="fa fa-bars"></i>
    			 </button>
         		<div class="collapse navbar-collapse" id="navbarNav">
-            		<ul class="nav navbar-nav">
+					<!-- atix hide menu-->
+            		<ul class="nav navbar-nav hide " style="display:none">
             			<?php
 							foreach ($params['menu'] as $key => $links) {
    								 if (count($links) > 1) {
@@ -49,9 +50,19 @@
 							}
 						?>
             		</ul>
-            		<ul class="nav navbar-nav ms-auto">
+<style>
+	#ul99 	li.nav-item:nth-of-type(1) {
+	display:none
+}
+#ul99 	li.nav-item:nth-of-type(2) {
+	display:none
+}
+
+</style>
+            		<ul class="nav navbar-nav ms-auto" id="ul99">
 						 <?php echo ossn_view_admin_sidemenu(); ?>
-           		 	</ul>                    
+           		 	</ul>   
+					                 
         		</div>
     		</div>
 </nav>

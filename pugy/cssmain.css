@@ -13,10 +13,7 @@ button{
 }
 
 #menux a {
-    border-radius:8px;
-    display: inline-block;
-    background-color: rgb(10, 106, 77);
-    color: white;
+     
     padding-left: 9px;
     padding-right: 9px;
     

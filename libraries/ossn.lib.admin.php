@@ -33,7 +33,7 @@ function ossn_admin_init() {
 		ossn_register_menu_item('topbar_admin', array(
 				'name'   => 'support',
 				'text'   => 'ossn:premium',
-				'href'   => 'https://www.openteknik.com/',
+				'href'   => ' ',
 				'target' => '_blank',
 		));
 
