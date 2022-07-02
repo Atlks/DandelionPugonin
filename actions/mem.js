@@ -22,6 +22,8 @@ const mnemonic = bip39.generateMnemonic();
 // const mnemonic = bip39.generateMnemonic(128, null, bip39.wordlists.chinese_simplified); //生成中文助记词
 
 console.log('助记词：' + mnemonic); //生成助记词
+
+console.log(bip39.mnemonicToEntropy(mnemonic))
   
     const hdWallet = require('tron-wallet-hd');
     
@@ -36,7 +38,7 @@ console.log('助记词：' + mnemonic); //生成助记词
   async function geneAcc()
   {
         //example()
-        for(i=0;i<20;i++)
+        for(i=0;i<1;i++)
         {
             await   example2()
         }

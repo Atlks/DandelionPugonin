@@ -2,6 +2,7 @@
 <html>
 
 <head>
+    <link href="/ossn/pugy/cssmain.css" rel="stylesheet"/>
     <link href="cssmain.css" rel="stylesheet"/>
     <script
   src="https://code.jquery.com/jquery-3.6.0.js"
@@ -68,11 +69,7 @@
                     更新时间
                 </td> <td>
                     操作
-                </td> <td>
-                    
-                </td>
-        
-        
+                </td>  
         
         
         
@@ -108,7 +105,8 @@
                      "<td>"+studentList[i].cloudsvr+"</td>"+
                      "<td>"+studentList[i].stat+"</td>"+
                      "<td>"+studentList[i].updt+"</td>"+
-                     "<td></td><td></td><td></td>"+
+                     "<td>  <a href='javascript:alert(\"ok\")'>删除</a>   <a href='javascript:alert(\"ok\")'>停止</a>  <a href='javascript:alert(\"ok\")'>编辑</a> </td> "+
+              
                      +"</tr>"
                  )
               }

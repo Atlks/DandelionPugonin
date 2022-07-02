@@ -16,12 +16,13 @@
 </head>
 
 <body>
+    <link href="cssmain.css" rel="stylesheet"/>
     <section>
         <h1>  发布内容替换</h1>
         <input type="text"></input><button>搜索</button>
         <main>
-        <button>新增</button>
-        <table class="table">
+        <button class="btn btn-primary">新增</button>
+        <table class="table" id="tbx">
         
            
             
@@ -76,6 +77,26 @@
         
             </tr>
         </table>
+
+        <script>
+            var studentList=[
+                {"id":1,pipici:"比特币",rpls:"btc",  "grp":"https://t.me/qingliao",pubplt:"老司机群",id:1,imp:10,yicaiji:10,freq:6,cloudsvr:"1号服务器",stat:"有效",updt:"2022-10-10 22:22:33","imp":10,"av":9}
+                ,{"id":2, "grp":"https://t.me/qingliao",id:2,imp:10,yicaiji:10}]
+              for (var i in studentList) {
+                 $("#tbx").append(
+                     "<tr><td>"+studentList[i].id+"</td>"+
+                        "<td>"+studentList[i].pubplt+"</td>"+
+                     "<td>"+studentList[i].pipici+"</td>"+
+                     "<td>"+studentList[i].rpls+"</td>"+
+                   
+                     "<td>"+studentList[i].updt+"</td>"+
+                     "<td>  <a href='javascript:alert(\"ok\")'>删除</a>  <a href='javascript:alert(\"ok\")'>编辑</a> </td><td></td> "+
+                           
+                     +"</tr>"
+                 )
+              }
+
+ </script>
         
         </main>
     </section>

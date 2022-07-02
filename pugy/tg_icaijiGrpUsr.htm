@@ -17,7 +17,7 @@
 
 <body> <link href="cssmain.css" rel="stylesheet"/>
     <section>
-        <h1>采集群用户</h1>
+        <h1>已采集群用户</h1>
         <main>
       
         <table class="table   table-hover table-bordered"  id="tbx">
@@ -47,10 +47,7 @@
                     更新时间
                 </td> <td>
                     操作
-                </td> <td>
-                    
-                </td>
-        
+                </td>  
         
         
         
@@ -82,7 +79,8 @@
                      "<td>"+studentList[i].grp+"</td>"+
                      "<td>"+studentList[i].imp+"</td>"+
                      "<td>"+studentList[i].updt+"</td>"+
-                     "<td></td><td></td><td></td>"+
+                     "<td>  <a href='javascript:alert(\"ok\")'>删除</a>   </td> "+
+              
                      +"</tr>"
                  )
               }

@@ -2,6 +2,7 @@
 <html>
 
 <head>
+    <link href="/ossn/pugy/cssmain.css" rel="stylesheet"/>
     <link href="cssmain.css" rel="stylesheet"/>
     <script
   src="https://code.jquery.com/jquery-3.6.0.js"
@@ -16,11 +17,12 @@
 </head>
 
 <body>
+    <link href="cssmain.css" rel="stylesheet"/>
     <section>
         <h1>  TG群发布管理</h1>
         <main>
-        <button>新增</button>
-        <table class="table">
+        <button class="btn btn-primary">新增</button>
+        <table class="table" id="tbx">
         
            
             
@@ -75,6 +77,27 @@
         
             </tr>
         </table>
+
+
+        
+
+        <script>
+            var studentList=[
+                {"id":1,  "grp":"https://t.me/qingliao",name:"老司机福利",id:1,imp:10,yicaiji:10,freq:6,cloudsvr:"1号服务器",stat:"有效",updt:"2022-10-10 22:22:33","imp":10,"av":9}
+                ,{"id":2, "grp":"https://t.me/qingliao",id:2,imp:10,yicaiji:10}]
+              for (var i in studentList) {
+                 $("#tbx").append(
+                     "<tr><td>"+studentList[i].id+"</td>"+
+                     "<td>"+studentList[i].grp+"</td>"+
+                     "<td>"+studentList[i].name+"</td>"+
+                     "<td>"+studentList[i].stat+"</td>"+
+                     "<td>"+studentList[i].updt+"</td>"+
+                     
+                     +"</tr>"
+                 )
+              }
+
+ </script>
         
         </main>
     </section>
