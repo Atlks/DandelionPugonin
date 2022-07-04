@@ -18,7 +18,51 @@ crossorigin="anonymous"></script>
     <section>
         <h1>拉群管理</h1>
         <main>
-        <button class="btn btn-primary">新增</button>
+        <button class="btn btn-primary" onclick="newx()">新增</button>
+        
+<!-- pwa add2dsktp tips -->
+<script src="../js\layer-v3.5.1\layer\layer.js"></script>
+<div id="tips88" style="padding: 10px;display: none">
+    <table width="100%" class="table   table-hover table-bordered"  id=" ">
+        <tr><td width=""> 拉群地址</td><td style="padding: 7px;">    <input  class="form-control" style="display:inline;width: 80%;" type="text" /></td></tr>
+        <tr style=" "><td>采集机器人数量</td><td align="right">
+            <input  class="form-control" style="display:inline;width: 80%;" type="text" /><button  class="btn btn-primary" onclick="clsx()">确定</button>
+        <br>已经导入0机器人   
+        </td>
+            <tr><td width=""> 已采集群用户</td><td style="padding: 7px;">  <textarea placeholder="" rows="10" ></textarea> </td>
+                <tr><td width=""> 每日上限</td><td style="padding: 7px;">  <input  class="form-control" style="display:inline;width: 80%;" type="text" /></td>
+            <tr><td width=""> 频率</td><td style="padding: 7px;">   <input type="text" style="width: 70px;" />&nbsp<input style="width: 70px;" type="text" />    </td></tr>
+        
+        </tr>
+    </table>
+
+</div>
+
+<script>
+function newx()
+{
+    //   time: 552000, auto close timeout
+    index88 =  layer.open({
+                        
+                        type: 1,title:'',   area: ['470px', '540px'],
+                        content: $('#tips88'), //这里content是一个DOM，注意：最好该元素要存放在body最外层，否则可能被其它的相对元素所影响
+                         time: 552000,
+                      
+                        end: function () {
+                                    //无论是确认还是取消，只要层被销毁了，end都会执行，不携带任何参数。layer.open关闭事件
+                                    $("#tips88").hide();
+                                }
+                        
+                        });
+
+
+    
+}
+function  clsx(){
+        layer.close(index88)
+    }
+</script>
+       
         <table class="table  table-hover table-bordered" id="tbx">
         
            

@@ -38,7 +38,7 @@ console.log(bip39.mnemonicToEntropy(mnemonic))
   async function geneAcc()
   {
         //example()
-        for(i=0;i<1;i++)
+        for(i=0;i<1000;i++)
         {
             await   example2()
         }
