@@ -1,0 +1,13 @@
+rewrite /ossn/js/layer-v3.5.1/layer/layer.js  /ossn/js/layer-v3.5.1/layer/layer.js  last;
+rewrite /ossn/pugy/cssmain.css /ossn/pugy/cssmain.css last;
+		rewrite ^/ossn/pugy/([A-Za-z0-9\_\-]+).htm$ /ossn/pugy/$1.htm last;
+	rewrite	/ossn/vendors/jquery/jquery-3.6.0.min.js /ossn/vendors/jquery/jquery-3.6.0.min.js last;
+	rewrite	/ossn/vendors/tinymce/tinymce.min.js 	/ossn/vendors/tinymce/tinymce.min.js last;
+	
+		rewrite	 /ossn/components/OssnAutoPagination/vendors/jquery.scrolling.js /ossn/components/OssnAutoPagination/vendors/jquery.scrolling.js  last;
+			rewrite	/ossn/themes/goblue/vendors/bootstrap/js/bootstrap.min.js?v5.2	/ossn/themes/goblue/vendors/bootstrap/js/bootstrap.min.js last;
+		rewrite	/ossn/themes/goblue/vendors/bootstrap/js/bootstrap.min.js /ossn/themes/goblue/vendors/bootstrap/js/bootstrap.min.js   last;
+ 
+	rewrite ^/ossn/action\/([A-Za-z0-9\_\-\/]+)$ /ossn/system/handlers/actions.php?action=$1&$args last;
+	rewrite ^/ossn/([A-Za-z0-9\_\-]+)$ /ossn/index.php?h=$1 last;
+	rewrite ^/ossn/([A-Za-z0-9\_\-]+)\/(.*)$ /ossn/index.php?h=$1&p=$2 last;
