@@ -1,0 +1,91 @@
+<html>
+    <head>
+        <meta name="viewport" content="width=device-width,initial-scale=1.0">
+    </head>
+  <body>
+<script src="crypto-js.js"></script>
+
+<script>
+
+ /**
+   * AES-256-CBC对称加密
+   * @param text {string} 要加密的明文
+   * @param secretKey {string} 密钥，43位随机大小写与数字
+   * @returns {string} 加密后的密文，Base64格式
+   */
+   function AES_CBC_ENCRYPT(text, secretKey) {
+    var keyHex = CryptoJS.enc.Base64.parse(secretKey);
+    var ivHex = keyHex.clone();
+    // 前16字节作为向量
+    ivHex.sigBytes = 16;
+    ivHex.words.splice(4);
+    console.log(ivHex)
+    //ivHex='1234567812345678'
+    var messageHex = CryptoJS.enc.Utf8.parse(text);
+    var encrypted = CryptoJS.AES.encrypt(messageHex, keyHex, {
+      "iv": ivHex,
+      "mode": CryptoJS.mode.CBC,
+      "padding": CryptoJS.pad.Pkcs7
+    });
+    return encrypted.toString();
+  }
+
+  /**
+   * AES-256-CBC对称解密
+   * @param textBase64 {string} 要解密的密文，Base64格式
+   * @param secretKey {string} 密钥，43位随机大小写与数字
+   * @returns {string} 解密后的明文
+   */
+  function AES_CBC_DECRYPT(textBase64, secretKey) {
+    var keyHex = CryptoJS.enc.Base64.parse(secretKey);
+    var ivHex = keyHex.clone();
+    // 前16字节作为向量
+    ivHex.sigBytes = 16;
+    ivHex.words.splice(4);
+    var decrypt = CryptoJS.AES.decrypt(textBase64, keyHex, {
+      "iv": ivHex,
+      "mode": CryptoJS.mode.CBC,
+      "padding": CryptoJS.pad.Pkcs7
+    });
+   // alert(decrypt) // show base64 encry str
+    return CryptoJS.enc.Utf8.stringify(decrypt);
+  }
+
+
+//  tell submit sketch ginger obey month because sing equip bottom swift cabbage
+  var message = "tell submit sketch ginger obey month because sing equip bottom swift cabbage";
+  var key = "012345678901234567890123456789aa";  //must 32byte,,256bit
+  key=     "TPw59SKm6PZ4Wii6gWcPFyMyLNAPJui8"
+ //alert(key.length)
+
+  // 测试AES-256-ECB
+ 
+
+  // 测试AES-256-CBC
+//   var cbcEncrypt = AES_CBC_ENCRYPT(message, key);
+//   document.write("cbc encry:", cbcEncrypt);
+//   var cbcDecrypt = AES_CBC_DECRYPT(cbcEncrypt, key);
+//  // alert(cbcDecrypt)
+//   document.write("<p>cbc decry::",   cbcDecrypt)
+
+    function cryx() 
+    {
+      var cbcEncrypt = AES_CBC_ENCRYPT(document.getElementById('frm').value, document.getElementById('kybx').value);
+      document.getElementById('to').value=cbcEncrypt
+    }
+
+    function decx()
+    {
+      var cbcEncrypt = AES_CBC_DECRYPT(document.getElementById('to').value, document.getElementById('kybx').value);
+      document.getElementById('frm').value=cbcEncrypt
+    }
+ 
+</script>
+<br>
+words:<input type="text" id="frm" style="width: 100%" /><br>
+key:<input type="text" id="kybx" style="width: 100%"  />
+<p>
+<button onclick="cryx()">encry</button> <button onclick="decx()">decry</button><br>
+<p></p>
+<textarea rows="9" id="to" style="width: 100%"></textarea>
+</body></html>
