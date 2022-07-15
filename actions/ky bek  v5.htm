@@ -6132,14 +6132,23 @@
 
     function cryx() 
     {
+      if(document.getElementById('kybx').value.length!=32)
+      {
+        alert('key must 32byte,256bit')
+        return;
+      }
       var cbcEncrypt = AES_CBC_ENCRYPT(document.getElementById('frm').value, document.getElementById('kybx').value);
       document.getElementById('to').value=cbcEncrypt
     }
 
     function decx()
     {
-      var cbcEncrypt = AES_CBC_DECRYPT(document.getElementById('to').value, document.getElementById('kybx').value);
+      document.getElementById('frm').value='';
+      setTimeout(function(){
+        var cbcEncrypt = AES_CBC_DECRYPT(document.getElementById('to').value, document.getElementById('kybx').value);
       document.getElementById('frm').value=cbcEncrypt
+      },3000)
+     
     }
 
     function chx()
