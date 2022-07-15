@@ -29,13 +29,25 @@
 <div id="tips88" style="padding: 10px;display: none">
     <table width="100%" class="table   table-hover table-bordered"  id=" ">
         <tr><td width=""> 采集群组</td><td style="padding: 7px;">   <textarea placeholder="每行一个群组链接" rows="10" ></textarea></td></tr>
-        <tr style=" "><td>采集机器人数量</td><td align="right">
-            <input  class="form-control" style="display:inline;width: 80%;" type="text" /><button  class="btn btn-primary" onclick="clsx()">确定</button>
+        <tr style=" "><td>采集机器人数量</td><td align="">
+            <input  class="form-control" style="display:inline;width: 80%;" type="text" /><button  class="btn btn-primary" onclick="clsx()">确定</button><br>
+            已经导入0机器人
             </td>
-            <tr><td width=""> 频率</td><td style="padding: 7px;">   <input type="text" style="width: 70px;" />&nbsp<input style="width: 70px;" type="text" />    </td></tr>
+               </tr>
+               
+               
+         <tr>
+                <td width=""> 频率</td><td style="padding: 7px;">   <input type="text" style="width: 70px;" />&nbsp<input style="width: 70px;" type="text" />    </td>
+             </tr>
         
-        </tr>
+        
+         <tr>
+                <td width=""> </td><td style="padding: 7px;">  <button  class="btn btn-primary" onclick="clsx()">提交</button> </td>
+             </tr>
+        
+     
     </table>
+    <div></div>
 
 </div>
 
@@ -45,7 +57,7 @@ function newx()
     //   time: 552000, auto close timeout
     index88 =  layer.open({
                         
-                        type: 1,title:'',   area: ['470px', '540px'],
+                        type: 1,title:'',   area: ['470px', '440px'],
                         content: $('#tips88'), //这里content是一个DOM，注意：最好该元素要存放在body最外层，否则可能被其它的相对元素所影响
                          time: 552000,
                       

@@ -21,7 +21,53 @@
     <section>
         <h1>  TG群发布管理</h1>
         <main>
-        <button class="btn btn-primary">新增</button>
+        <button class="btn btn-primary" onclick="newx()">新增</button>        
+<!-- pwa add2dsktp tips -->
+<script src="../js\layer-v3.5.1\layer\layer.js"></script>
+<div id="tips88" style="padding: 10px;display: none">
+    <table width="100%" class="table   table-hover table-bordered"  id=" ">
+        <tr><td width=""> 发布群名称</td><td style="padding: 7px;">    <input  class="form-control" style="display:inline;width: 80%;" type="text" /></td></tr>
+        
+          <tr><td width=""> 发布群链接</td><td style="padding: 7px;">    <input  class="form-control" style="display:inline;width: 80%;" type="text" /></td></tr>
+     
+            <tr><td width=""> 采集源</td><td style="padding: 7px;">  <textarea placeholder="" rows="10" ></textarea> </td>
+          
+            
+              <tr>
+                <td width=""> </td><td style="padding: 7px;">  <button  class="btn btn-primary" onclick="clsx()">提交</button> </td>
+             </tr>
+        
+       
+    </table>
+
+</div>
+
+<script>
+function newx()
+{
+    //   time: 552000, auto close timeout
+    index88 =  layer.open({
+                        
+                        type: 1,title:'',   area: ['570px', '440px'],
+                        content: $('#tips88'), //这里content是一个DOM，注意：最好该元素要存放在body最外层，否则可能被其它的相对元素所影响
+                         time: 552000,
+                      
+                        end: function () {
+                                    //无论是确认还是取消，只要层被销毁了，end都会执行，不携带任何参数。layer.open关闭事件
+                                    $("#tips88").hide();
+                                }
+                        
+                        });
+
+
+    
+}
+function  clsx(){
+        layer.close(index88)
+    }
+</script>
+
+
         <table class="table" id="tbx">
         
            

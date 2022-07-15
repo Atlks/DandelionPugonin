@@ -38,10 +38,20 @@
               }, 500);
               
         </script>
-     
+     <form action="tg_batmng.php">
+
+ 
         <input type="file"
-       id="avatar" name="avatar"
+       id="avatar" name="avatar"  onchange="filechx()"
         >
+    </form>
+        <script>
+            function filechx()
+            {
+                var jsonData = $("form").serializeArray();
+                $("form").submit();
+            }
+        </script>
         <table class="table   table-hover table-bordered" id="tbx">
         
         <thead  class="table-light">
