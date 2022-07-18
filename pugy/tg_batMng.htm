@@ -38,7 +38,7 @@
               }, 500);
               
         </script>
-     <form action="tg_batmng.php">
+     <form action="tg_batmng.php" style="display: none;">
 
  
         <input type="file"
@@ -104,20 +104,50 @@
         </table>
 
         <script>
-                   var studentList=[{"id":1,"name":"tg用户100个","imp":10,"av":9,time:"2020-11-11 11:11:11"},{"id":2,"name":"tg用户200个"}]
+
+$.get( "tg_batmng_qry.php", function( data ) {
+
+    var index_data_start = data.indexOf('-----attilax---');
+    var true_data = data.substr(index_data_start + 15);
+    console.log(true_data)
+    data = JSON.parse(true_data);
+  //alert( "Data Loaded: " + data );
+  var studentList=[{"id":1,"name":"tg用户100个","imp":10,"av":9,time:"2020-11-11 11:11:11"},{"id":2,"name":"tg用户200个"}]
+  var studentList= data;
+
+
                      for (var i in studentList) {
+                        var flds_str=studentList[i].flds;
+                        console.log(flds_str)
+                        var o=   JSON.parse(flds_str); ;
                         $("#tbx").append(
+                           
                             "<tr><td>"+studentList[i].id+"</td>"+
-                            "<td>"+studentList[i].name+"</td>"+
-                            "<td>"+studentList[i].imp+"</td>"+
-                            "<td>"+studentList[i].av+"</td>"+
-                            "<td>"+studentList[i].av+"</td>"+
-                            "<td>"+studentList[i].time+"</td>"+
-                            "<td>"+studentList[i].time+"</td>"+
+                            "<td>"+o.name+"</td>"+
+                            "<td>"+o.imp+"</td>"+
+                            "<td>"+o.av+"</td>"+
+                            "<td>"+o.av+"</td>"+
+                            "<td>"+o.time+"</td>"+
+                            "<td>"+o.time+"</td>"+
                             "<td>  <a href='javascript:alert(\"ok\")'>检查失效</a>  <a href='javascript:alert(\"ok\")'>删除</a> </td><td></td> "+
                             +"</tr>"
                         )
                      }
+});
+                //    var studentList=[{"id":1,"name":"tg用户100个","imp":10,"av":9,time:"2020-11-11 11:11:11"},{"id":2,"name":"tg用户200个"}]
+                //      for (var i in studentList) {
+                //         $("#tbx").append(
+                //             "<tr><td>"+studentList[i].id+"</td>"+
+                //             "<td>"+studentList[i].name+"</td>"+
+                //             "<td>"+studentList[i].imp+"</td>"+
+                //             "<td>"+studentList[i].av+"</td>"+
+                //             "<td>"+studentList[i].av+"</td>"+
+                //             "<td>"+studentList[i].time+"</td>"+
+                //             "<td>"+studentList[i].time+"</td>"+
+                //             "<td>  <a href='javascript:alert(\"ok\")'>检查失效</a>  <a href='javascript:alert(\"ok\")'>删除</a> </td><td></td> "+
+                //             +"</tr>"
+                //         )
+                //      }
 
         </script>
         

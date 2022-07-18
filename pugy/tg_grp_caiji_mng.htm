@@ -30,6 +30,7 @@
 <!-- pwa add2dsktp tips -->
 <script src="../js\layer-v3.5.1\layer\layer.js"></script>
 <div id="tips88" style="padding: 10px;display: none">
+    <form id="fm11" action="tg_grp_caiji_mng_add.php">
     <table width="100%" class="table   table-hover table-bordered"  id=" ">
         <tr><td width=""> 采集原名称</td><td style="padding: 7px;">  
               <input  class="form-control"  type="text" /></td></tr>
@@ -44,6 +45,7 @@
               
         </tr>
     </table>
+</form>
 
 </div>
 
@@ -68,7 +70,8 @@ function newx()
     
 }
 function  clsx(){
-        layer.close(index88)
+    fm11.submit();
+        layer.close(index88);
     }
 </script>
 <!--   pop code finish-->       
