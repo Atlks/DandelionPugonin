@@ -23,22 +23,23 @@ crossorigin="anonymous"></script>
 <!-- pwa add2dsktp tips -->
 <script src="../js\layer-v3.5.1\layer\layer.js"></script>
 <div id="tips88" style="padding: 10px;display: none">
+    <form id="fm11" action="tg_lacyonMng_add.php">
     <table width="100%" class="table   table-hover table-bordered"  id=" ">
-        <tr><td width=""> 拉群地址</td><td style="padding: 7px;">    <input  class="form-control" style="display:inline;width: 80%;" type="text" /></td></tr>
+        <tr><td width=""> 拉群地址</td><td style="padding: 7px;">    <input name="grp" class="form-control" style="display:inline;width: 80%;" type="text" /></td></tr>
         <tr style=" "><td>采集机器人数量</td><td align="left">
-            <input  class="form-control" style="display:inline;width: 80%;" type="text" /><button  class="btn btn-primary"  style="display:inline;" onclick="clsx()">确定</button>
+            <input name="botnum"  class="form-control" style="display:inline;width: 80%;" type="text" /><button  class="btn btn-primary"  style="display:inline;" onclick="clsx()">确定</button>
         <br>已经导入0机器人   
         </td>
-            <tr><td width=""> 已采集群用户</td><td style="padding: 7px;">  <textarea placeholder="" rows="10" ></textarea> </td>
-           <tr><td width=""> 每日上限</td><td style="padding: 7px;">  <input  class="form-control" style="display:inline;width: 80%;" type="text" /></td> </tr>
-            <tr><td width=""> 频率</td><td style="padding: 7px;">   <input type="text" style="width: 70px;" />&nbsp<input style="width: 70px;" type="text" />    </td></tr>
+            <tr><td width=""> 已采集群用户</td><td style="padding: 7px;">  <textarea name="urs" placeholder="" rows="10" ></textarea> </td>
+           <tr><td width=""> 每日上限</td><td style="padding: 7px;">  <input name="lmt"  class="form-control" style="display:inline;width: 80%;" type="text" /></td> </tr>
+            <tr><td width=""> 频率</td><td style="padding: 7px;">   <input name="freq" type="text" style="width: 70px;" />&nbsp<input style="width: 70px;" type="text" />    </td></tr>
             
               <tr>
                 <td width=""> </td><td style="padding: 7px;">  <button  class="btn btn-primary" onclick="clsx()">提交</button> </td>
              </tr>
         
        
-    </table>
+    </table></form>
 
 </div>
 
@@ -147,27 +148,52 @@ function  clsx(){
         </table>
 
         <script>
-            var studentList=[
-                {"id":1,  "grp":"https://t.me/qingliao",id:1,imp:10,yicaiji:10,freq:6,cloudsvr:"1号服务器",stat:"进行中",updt:"2022-10-10 22:22:33","imp":10,"av":9}
-                ,{"id":2, "grp":"https://t.me/qingliao",id:2,imp:10,yicaiji:10}]
-              for (var i in studentList) {
-                 $("#tbx").append(
-                     "<tr><td>"+studentList[i].id+"</td>"+
-                     "<td>"+studentList[i].grp+"</td>"+
-                     "<td>"+studentList[i].imp+"</td>"+
-                     "<td>"+studentList[i].yicaiji+"</td>"+
-                     "<td>"+studentList[i].freq+"</td>"+
-                     "<td>"+studentList[i].freq+"</td>"+
-                     "<td>"+studentList[i].cloudsvr+"</td>"+
-                     "<td>"+studentList[i].stat+"</td>"+
-                     "<td>"+studentList[i].updt+"</td>"+
-                     "<td> <a href='javascript:alert(\"ok\")'>加群</a>   <a href='javascript:alert(\"ok\")'>拉群</a> </td>"+
-                     "<td>  <a href='javascript:alert(\"ok\")'>删除</a>   <a href='javascript:alert(\"ok\")'>停止</a>  <a href='javascript:alert(\"ok\")'>编辑</a> </td>  "+
-         
-                     +"</tr>"
-                 )
-              }
 
+ 
+
+$.get( "qry.php?t=tbx&tpx=lacyonMng", function( data ) {
+
+    var index_data_start = data.indexOf('-----attilax---');
+    var true_data = data.substr(index_data_start + 15);
+    console.log(true_data)
+    data = JSON.parse(true_data);
+  //alert( "Data Loaded: " + data );
+  var studentList=[{"id":1,"name":"tg用户100个","imp":10,"av":9,time:"2020-11-11 11:11:11"},{"id":2,"name":"tg用户200个"}]
+  var studentList= data;
+
+
+                     for (var i in studentList) {
+                        var flds_str=studentList[i].flds;
+                        console.log(flds_str)
+                        var o=   JSON.parse(flds_str); ;
+                        $("#tbx").append(
+                           
+                            "<tr><td>"+studentList[i].id+"</td>"+
+                            "<td>"+o.grp+"</td>"+
+                            "<td>"+o.imp+"</td>"+
+                            "<td>"+o.yicaiji+"</td>"+
+                            "<td>"+o.freq+"</td>"+
+                            "<td>"+o.freq+"</td>"+
+                            "<td>"+o.cloudsvr+"</td>"+
+                            "<td>"+o.stat+"</td>"+
+                            "<td>"+o.updt+"</td>"+
+                            "<td> <a href='javascript:alert(\"ok\")'>加群</a>   <a href='javascript:alert(\"ok\")'>拉群</a> </td>"+
+                            "<td>  <a href=javascript:delx("+studentList[i].id+")>删除</a>   <a href='javascript:alert(\"ok\")'>停止</a>  <a href='javascript:alert(\"ok\")'>编辑</a> </td>  "+
+                
+                            +"</tr>"
+                        )
+                     }
+});
+            
+function delx(id)
+{
+    if (confirm("确定删除此记录吗"))
+    {
+        console.log("del.php?id="+id)
+        $.get( "del.php?id="+id);
+        location='tg_lacyonMng.htm'
+    }
+}
  </script>
         
         </main>
