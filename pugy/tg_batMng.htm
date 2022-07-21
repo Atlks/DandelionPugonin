@@ -129,11 +129,23 @@ $.get( "tg_batmng_qry.php", function( data ) {
                             "<td>"+o.av+"</td>"+
                             "<td>"+o.time+"</td>"+
                             "<td>"+o.time+"</td>"+
-                            "<td>  <a href='javascript:alert(\"ok\")'>检查失效</a>  <a href='javascript:alert(\"ok\")'>删除</a> </td><td></td> "+
+                            "<td>  <a href='javascript:alert(\"ok\")'>检查失效</a> "+
+                                "<a href=javascript:delx("+studentList[i].id+")>删除</a> </td> "+
                             +"</tr>"
                         )
                      }
 });
+
+
+function delx(id)
+{
+    if (confirm("确定删除此记录吗"))
+    {
+        console.log("del_tgbot.php?id="+id)
+        $.get( "del_tgbot.php?id="+id);
+        location='tg_batMng.htm'
+    }
+}
                 //    var studentList=[{"id":1,"name":"tg用户100个","imp":10,"av":9,time:"2020-11-11 11:11:11"},{"id":2,"name":"tg用户200个"}]
                 //      for (var i in studentList) {
                 //         $("#tbx").append(

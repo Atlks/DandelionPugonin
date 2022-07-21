@@ -89,7 +89,7 @@
                         "<td>"+o.grp+"</td>"+
                                  "<td>"+o.imp+"</td>"+
                                  "<td>"+o.updt+"</td>"+
-                     "<td>  <a href='javascript:alert(\"ok\")'>删除</a>   </td> "+
+                     "<td>   <a href=javascript:delx("+studentList[i].id+")>删除</a>  </td> "+
               
                      +"</tr>"
                  )
@@ -98,7 +98,15 @@
             });
                        
             
-               
+            function delx(id)
+{
+    if (confirm("确定删除此记录吗"))
+    {
+        console.log("del.php?id="+id)
+        $.get( "del.php?id="+id);
+        location='tg_icaijiGrpUsr.htm'
+    }
+}  
             
              </script>
 

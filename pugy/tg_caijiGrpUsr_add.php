@@ -8,7 +8,11 @@ $grp=$_GET['grp'];$freq=$_GET['freq'];$imp=$_GET['imp'];
 $values = array( '$grp' => $grp, '$freq' => $freq,'$imp' => $imp);
 $fld='{"id":1,  "grp":"$grp","id":1,"imp":$imp,"yicaiji":10,"freq":$freq,"cloudsvr":"1号服务器","stat":"进行中","updt":"'.$dtm.'","imp":10,"av":9}';
  $fld=strtr($fld, $values);
-$sql="insert caiji_grp_usr set flds='$fld'";
+
+
+ $_GET['cloudsvr']="1号服务器"; $_GET['updt']=$dtm; $_GET['yicaiji']=10;$_GET['stat']="进行中";
+ $fld=json_encode($_GET,JSON_UNESCAPED_UNICODE );
+$sql="insert tbx set flds='$fld' ,typex='caij_grp_ur'";
 echo $sql;
 $r=pdo_exec($sql);
 echo $r;

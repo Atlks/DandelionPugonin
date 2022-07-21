@@ -3,7 +3,7 @@
 include './conn_db.php';
 $dtm=date("Y-m-d H:i:s");
  
-$sql="select * from caiji_grp_usr order by id desc  limit 30";
+$sql="select * from tbx where typex='caij_grp_ur' order by id desc  limit 30";
 echo $sql;
 $r=pdo_query($sql);
 

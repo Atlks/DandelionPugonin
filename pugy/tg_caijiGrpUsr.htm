@@ -174,7 +174,7 @@ var studentList= data;
                      "<td>"+o.cloudsvr+"</td>"+
                      "<td>"+o.stat+"</td>"+
                      "<td>"+o.updt+"</td>"+
-                     "<td>  <a href='javascript:alert(\"ok\")'>删除</a>   <a href='javascript:alert(\"ok\")'>停止</a>  <a href='javascript:alert(\"ok\")'>编辑</a> </td> "+
+                     "<td>  <a href=javascript:delx("+studentList[i].id+")>删除</a>   <a href='javascript:alert(\"ok\")'>停止</a>  <a href='javascript:alert(\"ok\")'>编辑</a> </td> "+
               
                      +"</tr>"
                  )
@@ -182,7 +182,15 @@ var studentList= data;
 });
            
 
-   
+function delx(id)
+{
+    if (confirm("确定删除此记录吗"))
+    {
+        console.log("del.php?id="+id)
+        $.get( "del.php?id="+id);
+        location='tg_caijiGrpUsr.htm'
+    }
+} 
 
  </script>
  

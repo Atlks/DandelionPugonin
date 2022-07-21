@@ -12,6 +12,9 @@ $botnum=(int)$_GET['botnum'];
 $values = array( '$grp' => $grp, '$freq' => $freq,'$imp' => $imp);
 $fld='{"id":1,  "grp":"$grp","id":1,"yicaiji":10,"freq":$freq,"cloudsvr":"1号服务器","stat":"进行中","updt":"'.$dtm.'","imp":10,"av":9}';
  $fld=strtr($fld, $values);
+
+ $_GET['cloudsvr']="1号服务器"; $_GET['updt']=$dtm; $_GET['yicaiji']=10;$_GET['stat']="进行中";
+ $fld=json_encode($_GET,JSON_UNESCAPED_UNICODE );
 echo $fld;
  //die();
 $sql="insert tbx set flds='$fld',typex='lacyonMng'";
