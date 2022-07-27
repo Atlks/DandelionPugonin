@@ -27,7 +27,7 @@
 <!-- pwa add2dsktp tips -->
 <script src="../js\layer-v3.5.1\layer\layer.js"></script>
 <div id="tips88" style="padding: 10px;display: none">
-    <form id="fm11" action="tg_caijiGrpUsr_add.php">
+    <form id="fm11" action="db_add.php">
     <table width="100%" class="table   table-hover table-bordered"  id=" ">
         <tr><td width=""> 采集群组</td><td style="padding: 7px;">   <textarea name="grp" placeholder="每行一个群组链接" rows="10" ></textarea></td></tr>
         <tr style=" "><td>采集机器人数量</td><td align="">
@@ -43,6 +43,9 @@
         
         
          <tr>
+            <input type="hidden" name="typex" value="caij_grp_ur" />
+            <input type="hidden" name="edttag" id="edttag" value=""></input>
+            <input name="id" type="hidden"></input>
                 <td width=""> </td><td style="padding: 7px;">  <button  class="btn btn-primary" onclick="clsx()">提交</button> </td>
              </tr>
         
@@ -56,6 +59,7 @@
 <script>
 function newx()
 {
+    $("#edttag").val=0;
     //   time: 552000, auto close timeout
     index88 =  layer.open({
                         
@@ -174,14 +178,41 @@ var studentList= data;
                      "<td>"+o.cloudsvr+"</td>"+
                      "<td>"+o.stat+"</td>"+
                      "<td>"+o.updt+"</td>"+
-                     "<td>  <a href=javascript:delx("+studentList[i].id+")>删除</a>   <a href='javascript:alert(\"ok\")'>停止</a>  <a href='javascript:alert(\"ok\")'>编辑</a> </td> "+
+                     "<td>  <a href=javascript:delx("+studentList[i].id+")>删除</a>  "+
+                        " <a href='javascript:alert(\"ok\")'>停止</a> "+
+                         " <a href=javascript:edt("+studentList[i].id+")>编辑</a> </td> "+
               
                      +"</tr>"
                  )
                  }
 });
            
-
+function edt(id)
+{
+   
+        console.log("db_qry_byId.php?id="+id)
+        $.get( "db_qry_byId.php?id="+id,function(data){
+            var index_data_start = data.indexOf('-----attilax---');
+            var true_data = data.substr(index_data_start + 15);
+            console.log(true_data)
+            dt = JSON.parse(true_data);
+            $("input[name='id'").val=dt.id;
+            flds_obj=JSON.parse(dt.flds);
+            newx() //oopen wid
+            $("#edttag").val=1;
+            Object.getOwnPropertyNames(flds_obj).forEach(function(key){
+                console.log(key,flds_obj[key]);
+                v22=flds_obj[key];
+                console.log("*[name="+key+"]"  + "   ::   "+v22)
+              //  alert( $("*[name="+key+"]")   )
+                $("*[name="+key+"]").val(v22)
+               
+            });
+                        
+        });
+        
+    
+} 
 function delx(id)
 {
     if (confirm("确定删除此记录吗"))
