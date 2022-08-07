@@ -1,4 +1,11 @@
-//获取128位数字
+<html>
+    <head>
+        <meta name="viewport" content="width=device-width,initial-scale=1.0">
+    </head>
+  <body></body>
+  
+  <script>
+ //获取128位数字
 function get128bitNum()
 {
   var  s=""
@@ -237,4 +244,26 @@ function generateMnemonic()
     return wd99
 }
 
-console.log(generateMnemonic())
+//console.log(generateMnemonic())
+
+
+</script>
+
+<script>
+
+
+  //生成英文助记词
+mnemonic = generateMnemonic();  
+// const mnemonic = bip39.generateMnemonic(128, null, bip39.wordlists.chinese_simplified); //生成中文助记词
+document.write(generateMnemonic());document.write(generateMnemonic());document.write(generateMnemonic());
+document.write(' school ')
+document.write(generateMnemonic());document.write(generateMnemonic());document.write(generateMnemonic());
+document.write(generateMnemonic()+' harsh ' +  generateMnemonic()+"  "+ generateMnemonic()); //生成助记词
+</script>
+
+
+</body>
+
+
+</html>
+
