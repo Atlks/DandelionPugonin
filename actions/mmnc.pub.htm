@@ -1,4 +1,11 @@
-//获取128位数字
+<html>
+    <head>
+        <meta name="viewport" content="width=device-width,initial-scale=1.0">
+    </head>
+  <body></body>
+  
+  <script>
+ //获取128位数字
 function get128bitNum()
 {
   var  s=""
@@ -209,16 +216,14 @@ console.log(wdlst2048.length)   //2048
 function generateMnemonic()
 {
     a128num=get128bitNum();
-
-    console.log( " 128bit rand number : "+ bin2hex(a128num))
-  //  console.log(a128num)
+ //   console.log(a128num)
     sha256hash_rzt=sha256hash(a128num)
     console.log( sha256hash_rzt )
     
     var pad4bit_char=sha256hash_rzt.charAt(0);
     console.log(hex2bin(pad4bit_char))
     var all132bitNum=a128num+hex2bin(pad4bit_char)
-   // console.log(all132bitNum)
+  //  console.log(all132bitNum)
     
     var wd99=""
     for(var i=0;i<all132bitNum.length-3;i=i+11)
@@ -239,4 +244,15 @@ function generateMnemonic()
     return wd99
 }
 
-console.log(generateMnemonic())
+//console.log(generateMnemonic())
+
+ 
+document.write(generateMnemonic()); 
+</script>
+
+
+</body>
+
+
+</html>
+

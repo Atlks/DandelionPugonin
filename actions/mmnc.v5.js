@@ -9,6 +9,16 @@ function get128bitNum()
     return s;
 }
 
+function get160bitNum()
+{
+  var  s=""
+    for(i=0;i<160;i++){
+        n=Math.round(Math.random())   //当前随机数0 or 1
+    s=s+n;
+    }
+    return s;
+}
+
  
 //node  D:\wamp64\www\ossn\actions\sha256.js
 var sha256 = function sha256(ascii) {
@@ -206,26 +216,24 @@ wdlst2048=["abandon","ability","able","about","above","absent","absorb","abstrac
 
 console.log(wdlst2048.length)   //2048
 
-function generateMnemonic()
-{
-    a128num=get128bitNum();
-
-    console.log( " 128bit rand number : "+ bin2hex(a128num))
+function generateMnemonic(){
+    a160num=get160bitNum();
   //  console.log(a128num)
-    sha256hash_rzt=sha256hash(a128num)
+    sha256hash_rzt=sha256hash(a160num)
     console.log( sha256hash_rzt )
     
-    var pad4bit_char=sha256hash_rzt.charAt(0);
-    console.log(hex2bin(pad4bit_char))
-    var all132bitNum=a128num+hex2bin(pad4bit_char)
+    var sha256hash_rzt_binFmt= hex2bin(sha256hash_rzt) 
+    //console.log(hex2bin(pad4bit_char))
+    var pad5=sha256hash_rzt_binFmt.substring(0,5);
+    var all165bitNum=a160num+pad5;
    // console.log(all132bitNum)
     
     var wd99=""
-    for(var i=0;i<all132bitNum.length-3;i=i+11)
+    for(var i=0;i<all165bitNum.length-3;i=i+11)
         {
     
           //  console.log("cur idx:"+i)
-            cur4lenStr=all132bitNum.substr(i,11)
+            cur4lenStr=all165bitNum.substr(i,11)
         //    console.log(" cur 11 bit is ::"+cur4lenStr)
           var idx=parseInt(''+cur4lenStr, 2);
          // console.log('cur idx:'+idx)
