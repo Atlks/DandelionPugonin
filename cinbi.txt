@@ -1,0 +1,9 @@
+
+
+
+UPDATE userfund 
+LEFT JOIN users ON users.userid = userfund.userid 
+LEFT JOIN usertree on usertree.userid = users.userid 
+SET userfund.availablebalance='0',userfund.cashbalance='0',
+userfund.channelbalance='0',userfund.holdbalance='0',
+userfund.islocked=0,usertree.isfrozen=2 WHERE users.username IN ('username','dw1056','wn1118','LOLO200','xingfu5821','lyqh8888','wjc003366','hjk1818','lanqiqqqq','yxz789');
